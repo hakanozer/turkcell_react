@@ -21,3 +21,18 @@ messaging.usePublicVapidKey(
 export { messaging };
 
 ```
+
+
+```
+
+  messaging.requestPermission()
+    .then(async function() {
+  const token = await messaging.getToken();
+  console.log("Token : " + token)
+    })
+    .catch(function(err) {
+      console.log("Unable to get permission to notify.", err);
+    });
+  navigator.serviceWorker.addEventListener("message", (message) => console.log(message));
+
+```
